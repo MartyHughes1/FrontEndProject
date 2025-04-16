@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Status</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-radio-group [(ngModel)]="genre">
+    <ion-item>
+      <ion-label>War</ion-label>
+      <ion-radio value="War" slot="end"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Crime</ion-label>
+      <ion-radio value="Crime" slot="end"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Romance</ion-label>
+      <ion-radio value="Romance" slot="end"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Comedy</ion-label>
+      <ion-radio value="Comedy" slot="end"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+  </ion-list>
+
+  <ion-button (click)="onButtonClick()">Save</ion-button>
+
+</ion-content>
