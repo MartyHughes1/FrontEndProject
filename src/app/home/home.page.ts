@@ -19,6 +19,7 @@ interface Movie {
   Released: string;
   Runtime: string;
   Language: string;
+  TrailerUrl?: string;
 }
 @Component({
   selector: 'app-movie',
@@ -48,11 +49,12 @@ export class HomePage implements OnInit {
     this.movieService.GetMovieData(this.myGenre).subscribe(
       async (data) => {
         if (data && data.Search) {
-          const movieDetailsPromises = data.Search.map(async (movie: any) => {  // Explicitly define 'movie' as 'any'
-            // Fetch detailed information about each movie using the imdbID
+          const movieDetailsPromises = data.Search.map(async (movie: any) => {
             const movieDetails = await this.movieService.GetMovieDetails(movie.imdbID).toPromise();
-            return movieDetails; // Returns the detailed movie data
+            movieDetails.TrailerUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(movieDetails.Title + " trailer")}`;
+            return movieDetails;
           });
+          
 
           // Wait for all movie details to be fetched before setting the movies array
           this.movies = await Promise.all(movieDetailsPromises);

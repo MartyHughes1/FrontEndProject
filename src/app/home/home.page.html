@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-title>Current Genre Choice: {{myGenre}}</ion-title>
+  <ion-title>Currently showing movie's for the genre: {{myGenre}}</ion-title>
   <br>
   <ion-button [routerLink]="['/genre']">Change genre</ion-button>
 
@@ -23,6 +23,10 @@
       <p><strong>Genre:</strong> {{movie.Genre}}</p>
       <p><strong>Rating:</strong> {{movie.imdbRating}}</p>
       <p><strong>Plot:</strong> {{movie.Plot}}</p>
+      <ion-button expand="full" fill="outline" color="primary" [href]="movie.TrailerUrl" target="_blank">
+        Watch Trailer
+      </ion-button>
+      
     </ion-card-content>
   </ion-card>
 </ion-content>

@@ -14,4 +14,5 @@ export const routes: Routes = [
     path: 'genre',
     loadComponent: () => import('./genre/genre.page').then( m => m.GenrePage)
   },
+
 ];
