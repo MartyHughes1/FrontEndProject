@@ -25,3 +25,32 @@
 #container a {
   text-decoration: none;
 }
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0; /* optional spacing */
+}
+
+
+.card-content-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  ion-card-header,
+  ion-card-content {
+    width: 100%;
+  }
+
+  ion-card-content p {
+    margin: 0.25rem 0;
+  }
+}

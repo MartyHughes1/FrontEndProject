@@ -1,32 +1,38 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title style="text-align: center; display: block;">
       Movie recommendation app
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-title>Currently showing movie's for the genre: {{myGenre}}</ion-title>
-  <br>
-  <ion-button [routerLink]="['/genre']">Change genre</ion-button>
-
+  <ion-title style="text-align: center; display: block;">
+    Currently showing movie's for the genre: {{myGenre}}
+  </ion-title>  
+  <div class="center-button">
+    <ion-button [routerLink]="['/genre']">Change genre</ion-button>
+  </div>
   <ion-card *ngFor="let movie of movies">
-    <img alt="movie Poster" src={{movie.Poster}}><!-- Display movie poster -->
-    <ion-card-header>
-      <ion-card-title>{{movie.Title}}</ion-card-title>
-      <ion-card-subtitle>{{movie.Year}}</ion-card-subtitle>
-    </ion-card-header>
-        <ion-card-content>
-      <p><strong>Director:</strong> {{movie.Director}}</p>
-      <p><strong>Actors:</strong> {{movie.Actors}}</p>
-      <p><strong>Genre:</strong> {{movie.Genre}}</p>
-      <p><strong>Rating:</strong> {{movie.imdbRating}}</p>
-      <p><strong>Plot:</strong> {{movie.Plot}}</p>
-      <ion-button expand="full" fill="outline" color="primary" [href]="movie.TrailerUrl" target="_blank">
-        Watch Trailer
-      </ion-button>
+    <div class="card-content-center">
+      <img alt="movie Poster" [src]="movie.Poster">
       
-    </ion-card-content>
+      <ion-card-header>
+        <ion-card-title>{{movie.Title}}</ion-card-title>
+        <ion-card-subtitle>{{movie.Year}}</ion-card-subtitle>
+      </ion-card-header>
+  
+      <ion-card-content>
+        <p><strong>Director:</strong> {{movie.Director}}</p>
+        <p><strong>Actors:</strong> {{movie.Actors}}</p>
+        <p><strong>Genre:</strong> {{movie.Genre}}</p>
+        <p><strong>Rating:</strong> {{movie.imdbRating}}</p>
+        <p><strong>Plot:</strong> {{movie.Plot}}</p>
+        <ion-button expand="full" fill="outline" color="primary" [href]="movie.TrailerUrl" target="_blank">
+          Watch Trailer
+        </ion-button>
+      </ion-card-content>
+    </div>
   </ion-card>
+
 </ion-content>

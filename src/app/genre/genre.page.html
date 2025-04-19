@@ -3,7 +3,8 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Genre</ion-title>
+    <ion-title style="text-align: center; display: block;">
+      Genre</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,24 +12,24 @@
   <ion-list>
     <ion-radio-group [(ngModel)]="genre">
     <ion-item>
-      <ion-label>Horror</ion-label>
+   
+      <img class="genre-img" src="assets/horror.jfif" alt="horror">
       <ion-radio value="Horror" slot="end"></ion-radio>
     </ion-item>
     <ion-item>
-      <ion-label>Crime</ion-label>
-      <ion-radio value="Crime" slot="end"></ion-radio>
+      <img  class="genre-img" src="assets/crime.jpg" alt="crime">      <ion-radio value="Crime" slot="end"></ion-radio>
     </ion-item>
     <ion-item>
-      <ion-label>Romance</ion-label>
+      <img class="genre-img" src="assets/romance.jfif" alt="horror">
       <ion-radio value="Romance" slot="end"></ion-radio>
     </ion-item>
     <ion-item>
-      <ion-label>Comedy</ion-label>
+      <img class="genre-img" src="assets/comedy.jfif" alt="horror">
       <ion-radio value="Comedy" slot="end"></ion-radio>
     </ion-item>
   </ion-radio-group>
   </ion-list>
-
+  <div class="center-button">
   <ion-button (click)="onButtonClick()">Save</ion-button>
-
+</div>
 </ion-content>
