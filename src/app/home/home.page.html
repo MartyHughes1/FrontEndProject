@@ -8,11 +8,13 @@
 
 <ion-content [fullscreen]="true">
   <ion-title style="text-align: center; display: block;">
-    Currently showing movie's for the genre: {{myGenre}}
+    Currently showing movie's for the genre: {{myGenre}}<!--retrieves current selected genre from storage-->
   </ion-title>  
   <div class="center-button">
-    <ion-button [routerLink]="['/genre']">Change genre</ion-button>
+    <ion-button [routerLink]="['/genre']">Change genre</ion-button><!--User navigates to genre page by selecting this button-->
   </div>
+
+  <!--Loops through movies array and displays movies in each card-->
   <ion-card *ngFor="let movie of movies">
     <div class="card-content-center">
       <img alt="movie Poster" [src]="movie.Poster">
@@ -21,13 +23,15 @@
         <ion-card-title>{{movie.Title}}</ion-card-title>
         <ion-card-subtitle>{{movie.Year}}</ion-card-subtitle>
       </ion-card-header>
-  
+  <!--Displays some movie details-->
       <ion-card-content>
         <p><strong>Director:</strong> {{movie.Director}}</p>
         <p><strong>Actors:</strong> {{movie.Actors}}</p>
         <p><strong>Genre:</strong> {{movie.Genre}}</p>
         <p><strong>Rating:</strong> {{movie.imdbRating}}</p>
         <p><strong>Plot:</strong> {{movie.Plot}}</p>
+
+        <!--Button to navigate to youtube trailer-->
         <ion-button expand="full" fill="outline" color="primary" [href]="movie.TrailerUrl" target="_blank">
           Watch Trailer
         </ion-button>

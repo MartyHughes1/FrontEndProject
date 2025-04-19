@@ -60,6 +60,7 @@ export class HomePage implements OnInit {
           this.movies = await Promise.all(movieDetailsPromises);
         }
       },
+      //error if the api fetches no movies
       (error) => {
         console.error('Error fetching movie data:', error);
       }

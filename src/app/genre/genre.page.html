@@ -10,7 +10,10 @@
 
 <ion-content [fullscreen]="true">
   <ion-list>
+    <!--Two way binding, updating UI and data if either is changed-->
     <ion-radio-group [(ngModel)]="genre">
+
+      <!--Below are options to change genre-->
     <ion-item>
    
       <img class="genre-img" src="assets/horror.jfif" alt="horror">
@@ -29,6 +32,8 @@
     </ion-item>
   </ion-radio-group>
   </ion-list>
+
+  <!--User saves the genre when button is clicked-->
   <div class="center-button">
   <ion-button (click)="onButtonClick()">Save</ion-button>
 </div>
